@@ -10,23 +10,29 @@ import {
   faEdit, faPen, faTrashAlt, faSearch, faUser, faKey, faEyeSlash, faSignInAlt, faSignOutAlt, faUserPlus, faCircle
 } from '@fortawesome/free-solid-svg-icons';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { AppFooterComponent } from './components/app-footer/app-footer.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { HomeComponent } from './home/home.component';
+import { MovieService } from './shared/services/movie.service'
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    AppFooterComponent,
-    FooterComponent
+    FooterComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    MovieService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { 
